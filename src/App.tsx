@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, TextField, Container, CircularProgress, Paper, Typography, Button } from '@mui/material';
 import { convertTextToEmoji } from './services/emojiService';
 import { DecisionPendulum } from './components/DecisionPendulum';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 const App = () => {
   const [inputText, setInputText] = useState('');
@@ -29,7 +29,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Container maxWidth="md" sx={{ pt: 4, pb: 4 }}>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
           <Typography variant="h3" sx={{ color: '#1F2937', mb: 2, fontWeight: 'bold' }}>
@@ -140,7 +140,7 @@ const App = () => {
           onClose={() => setIsPendulumOpen(false)}
         />
       </Container>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
