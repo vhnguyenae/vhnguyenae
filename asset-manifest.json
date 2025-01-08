@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.1f9b454f.js",
+    "main.js": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.b4ed4f9a.js",
     "index.html": "https://vhnguyenae.github.io/vhnguyenae/index.html",
-    "main.1f9b454f.js.map": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.1f9b454f.js.map"
+    "main.b4ed4f9a.js.map": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.b4ed4f9a.js.map"
   },
   "entrypoints": [
-    "static/js/main.1f9b454f.js"
+    "static/js/main.b4ed4f9a.js"
   ]
 }
