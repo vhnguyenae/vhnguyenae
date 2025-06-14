@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.18c5f1b9.js",
+    "main.css": "https://vhnguyenae.github.io/vhnguyenae/static/css/main.19b86471.css",
+    "main.js": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.0deecc70.js",
     "index.html": "https://vhnguyenae.github.io/vhnguyenae/index.html",
-    "main.18c5f1b9.js.map": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.18c5f1b9.js.map"
+    "main.19b86471.css.map": "https://vhnguyenae.github.io/vhnguyenae/static/css/main.19b86471.css.map",
+    "main.0deecc70.js.map": "https://vhnguyenae.github.io/vhnguyenae/static/js/main.0deecc70.js.map"
   },
   "entrypoints": [
-    "static/js/main.18c5f1b9.js"
+    "static/css/main.19b86471.css",
+    "static/js/main.0deecc70.js"
   ]
 }
