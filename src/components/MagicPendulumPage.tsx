@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Modal, Paper } from '@mui/material';
-
-interface Props {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import React, { useState } from 'react';
+import { Box, Typography, Paper } from '@mui/material';
+import './MagicPendulumPage.css';
 
 const decisions = [
   { text: "Yesssss 💪 ! Do it! ✨", emoji: "👍" },
@@ -16,21 +12,10 @@ const decisions = [
   { text: "Better flip a coin... oh wait, that's basically me! 🎲", emoji: "🎲" }
 ];
 
-export const DecisionPendulum: React.FC<Props> = ({ isOpen, onClose }) => {
+const MagicPendulumPage: React.FC = () => {
   const [swingDegree, setSwingDegree] = useState(0);
   const [isSwinging, setIsSwinging] = useState(false);
   const [decision, setDecision] = useState<string | null>(null);
-  const [bananaPosition, setBananaPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    if (isOpen) {
-      startSwinging();
-    } else {
-      setDecision(null);
-      setSwingDegree(0);
-      setIsSwinging(false);
-    }
-  }, [isOpen]);
 
   const startSwinging = () => {
     setIsSwinging(true);
@@ -65,30 +50,16 @@ export const DecisionPendulum: React.FC<Props> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Modal
-      open={isOpen}
-      onClose={onClose}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: { xs: '16px', md: 0 }
-      }}
-    >
+    <div className="magic-pendulum-page">
       <Paper 
         sx={{ 
-          position: 'relative',
           width: '100%',
           maxWidth: { xs: '100%', sm: 800 },
-          height: { xs: '85vh', sm: 500 },
           p: { xs: 2, sm: 3 },
-          outline: 'none',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
           bgcolor: '#1a1a1a',
-          overflow: 'hidden',
-          mx: { xs: 2, sm: 2 }
+          borderRadius: 2,
+          mx: 'auto',
+          mt: 0
         }}
       >
         <Typography 
@@ -206,14 +177,10 @@ export const DecisionPendulum: React.FC<Props> = ({ isOpen, onClose }) => {
           )}
         </Box>
 
-        {/* Updated Ask Again Button */}
+        {/* Ask Again Button */}
         <Box
           onClick={() => !isSwinging && startSwinging()}
           sx={{ 
-            position: 'absolute',
-            bottom: { xs: 8, sm: -20 },
-            left: '50%',
-            transform: 'translateX(-50%)',
             padding: { xs: '6px 12px', sm: '12px 24px' },
             borderRadius: '20px',
             backgroundColor: 'rgba(255, 215, 0, 0.1)',
@@ -221,14 +188,13 @@ export const DecisionPendulum: React.FC<Props> = ({ isOpen, onClose }) => {
             color: 'gold',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            zIndex: 1,
             textAlign: 'center',
             width: { xs: '85%', sm: 'auto' },
             minWidth: { xs: 'auto', sm: '300px' },
-            marginBottom: { xs: '10px', sm: '25px' },
+            margin: '0 auto',
             '&:hover': {
               backgroundColor: 'rgba(255, 215, 0, 0.2)',
-              transform: 'translateX(-50%) scale(1.05)',
+              transform: 'scale(1.05)',
               boxShadow: '0 0 15px rgba(255, 215, 0, 0.3)'
             }
           }}
@@ -238,15 +204,17 @@ export const DecisionPendulum: React.FC<Props> = ({ isOpen, onClose }) => {
             fontWeight: 'bold', 
             mb: { xs: 0.5, sm: 1 }
           }}>
-            🎲 Not convinced?
+            🎲 Ask the Magic Pendulum
           </Typography>
           <Typography sx={{ 
             fontSize: { xs: '0.8rem', sm: '1rem' }
           }}>
-            The banana gods grant you another try!
+            Click to get your answer! ✨
           </Typography>
         </Box>
       </Paper>
-    </Modal>
+    </div>
   );
-}; 
+};
+
+export default MagicPendulumPage; 

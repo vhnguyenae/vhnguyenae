@@ -1,0 +1,6 @@
+.emojify-container {
+  min-height: 100vh;
+  padding: 2rem;
+  margin-top: 60px; /* Account for fixed navigation */
+  background-color: #f8f9fa;
+} 
